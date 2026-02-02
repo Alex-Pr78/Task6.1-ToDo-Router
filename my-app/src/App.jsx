@@ -60,16 +60,16 @@ export const TodosList = () => {
 	};
 
 	// Удаление задачи
-	const deleteTodo = (id) => {
-		fetch(`${API_URL}/${id}`, {
-			method: 'DELETE',
-		})
-			.then((response) => {
-				if (!response.ok) throw new Error('Ошибка при удалении');
-				setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
-			})
-			.catch((error) => setError(error.message));
-	};
+	// const deleteTodo = (id) => {
+	// 	fetch(`${API_URL}/${id}`, {
+	// 		method: 'DELETE',
+	// 	})
+	// 		.then((response) => {
+	// 			if (!response.ok) throw new Error('Ошибка при удалении');
+	// 			setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
+	// 		})
+	// 		.catch((error) => setError(error.message));
+	// };
 
 	// Обновление completed
 	const toggleCompleted = (todo) => {
@@ -154,11 +154,11 @@ export const TodosList = () => {
 								{title}
 							</label>
 
-							<button
+							{/* <button
 								onClick={() => deleteTodo(id)}
 								className={styles['delete-case']}
 								aria-label="Удалить"
-							></button>
+							></button> */}
 						</li>
 					))}
 				</ul>
