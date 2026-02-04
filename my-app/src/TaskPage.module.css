@@ -1,0 +1,138 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	max-width: 600px;
+	margin: 40px auto;
+	padding: 30px;
+	background: #2f363e;
+	border-radius: 30px;
+	box-shadow:
+		25px 25px 75px rgba(0, 0, 0, 0.25),
+		10px 10px 70px rgba(0, 0, 0, 0.25),
+		inset 5px 5px 10px rgba(0, 0, 0, 0.5),
+		inset 5px 5px 20px rgba(255, 255, 255, 0.2),
+		inset -5px -5px 15px rgba(0, 0, 0, 0.75);
+	color: #fff;
+}
+
+.textarea {
+	min-width: 500px;
+	margin: 10px;
+	border: none;
+	outline: none;
+	background: transparent;
+	text-align: center;
+	color: #fff;
+}
+
+.labelCheckbox {
+	position: relative;
+}
+
+.buttons {
+	display: flex;
+	flex-direction: row;
+	justify-content: end;
+	margin-top: 30px;
+	gap: 20px;
+}
+
+.taskCard {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+}
+
+.taskTitle {
+	position: relative;
+	margin: 0 auto;
+}
+
+.title {
+	font-size: 2rem;
+	margin-bottom: 16px;
+	color: #1f83f2;
+}
+
+.description {
+	font-size: 1.125rem;
+	line-height: 1.5;
+	margin-bottom: 24px;
+}
+
+.backButton {
+	display: inline-block;
+	padding: 5px;
+	left: 0;
+	background-color: #1f83f2;
+	color: #fff;
+	border: none;
+	border-radius: 50%;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.backButton:hover {
+	background-color: #1666c1;
+}
+
+.saveButton,
+.deleteButton {
+	background: #1f83f2;
+	width: 100px;
+	border-radius: 20px;
+}
+
+/* *********************************
+Чекбоксы
+********************************* */
+
+.real-checkbox {
+	width: 0;
+	height: 0;
+	opacity: 0;
+	position: absolute;
+	z-index: -1;
+}
+
+.real-checkbox:focus + .custom-checkbox {
+	box-shadow:
+		0px 0px 0px 1px #38577a,
+		0px 0px 10px #7e9bbd;
+}
+
+.custom-checkbox {
+	position: absolute;
+	display: inline-block;
+	width: 29px;
+	height: 29px;
+	
+	background: #2f363e;
+	left: 8px;
+	border-radius: 50%;
+	border: 2px solid #7e9bbd;
+	vertical-align: sub;
+}
+
+.custom-checkbox::before {
+	content: '';
+
+	display: inline-block;
+	width: 13px;
+	height: 13px;
+	background-image: url('./check.svg');
+	background-size: contain;
+	background-repeat: no-repeat;
+
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%) scale(0);
+	margin-top: 1px;
+
+	transition: 0.2s ease-in;
+}
+
+.real-checkbox:checked + .custom-checkbox::before {
+	transform: translate(-50%, -50%) scale(1);
+}
