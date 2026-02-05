@@ -11,7 +11,6 @@ export const TodosList = () => {
 		setNewTodoText,
 		searchText,
 		setSearchText,
-
 		setSortAlpha,
 		addTodo,
 		displayedTodos,

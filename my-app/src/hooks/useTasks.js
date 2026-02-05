@@ -40,6 +40,7 @@ export const useTasks = () => {
 		}
 	}, [newTodoText, request]);
 
+	// Используем useMemo, чтобы фильтрация выполнялась только тогда, когда изменяются tasks или searchText, чтобы не фильтровать при каждом рендере.
 	const filteredTodos = useMemo(() => {
 		return tasks.filter((todo) =>
 			todo.title.toLowerCase().includes(searchText.toLowerCase()),
@@ -47,8 +48,13 @@ export const useTasks = () => {
 	}, [tasks, searchText]);
 
 	const displayedTodos = useMemo(() => {
-		if (sortAlpha) {
-			return [...filteredTodos].sort((a, b) => a.title.localeCompare(b.title));
+		if (sortAlpha === true) {
+			// Создаём копию массива filteredTodos (чтобы не мутировать исходный)
+			return [...filteredTodos].sort((a, b) => {
+				if (a.title < b.title) return -1;
+				if (a.title > b.title) return 1;
+				return 0;
+			});
 		}
 		return filteredTodos;
 	}, [filteredTodos, sortAlpha]);
