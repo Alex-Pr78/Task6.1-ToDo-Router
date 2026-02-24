@@ -1,0 +1,63 @@
+
+label {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	padding-left: 40px;
+	cursor: pointer;
+}
+
+.add-todo, .search-todo {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 10px;
+	padding: 10px;
+}
+
+.todoInput {
+	width: 100%;
+	border: none;
+	outline: none;
+	padding: 15px 20px;
+	border-radius: 30px;
+	font-size: 1em;
+	box-shadow:
+		5px 5px 7px rgba(0, 0, 0, 0.25),
+		inset 2px 2px 5px rgba(0, 0, 0, 0.5),
+		inset -3px -3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.empty {
+	text-align: center;
+	list-style: none;
+	color: #fff;
+}
+
+
+
+.listItem {
+	position: relative;
+	width: calc(100% - 55px);
+	display: flex;
+	align-items: center;
+	background: #1f83f2;
+	margin: 15px 0;
+	padding: 10px 10px 10px 5px;
+	min-height: 45px;
+	cursor: pointer;
+	border-radius: 22.5px;
+	color: #fff;
+	box-shadow:
+		5px 5px 7px rgba(0, 0, 0, 0.25),
+		inset 2px 2px 5px rgba(0, 0, 0, 0.5),
+		inset -3px -3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.error {
+	color: red;
+	text-align: center;
+}
+
