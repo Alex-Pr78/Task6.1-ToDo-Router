@@ -1,0 +1,8 @@
+.controlPanel {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	border-bottom: 2px solid #444;
+	padding: 10px;
+	gap: 10px;
+}
